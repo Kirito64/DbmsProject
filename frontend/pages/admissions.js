@@ -1,5 +1,6 @@
 import { Formik } from "formik";
 import axios from "axios";
+import Router from "next/router";
 const Admissions = () => {
   return (
     <div className="boddy">
@@ -131,7 +132,7 @@ const Admissions = () => {
                   required
                   onChange={handleChange}
                   name="DOB"
-                  type="text"
+                  type="date"
                 />
               </div>
               <div className="subgrid">
@@ -368,7 +369,7 @@ const Admissions = () => {
                       required
                       onChange={handleChange}
                       name="JoDate"
-                      type="text"
+                      type="date"
                     />
                   </td>
                   <td>
@@ -399,7 +400,7 @@ const Admissions = () => {
                       required
                       onChange={handleChange}
                       name="InDate"
-                      type="text"
+                      type="date"
                     />
                   </td>
                   <td>
