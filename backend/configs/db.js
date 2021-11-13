@@ -17,6 +17,8 @@ db.jeemain = require("../models/jeemain");
 db.studentPayment = require("../models/studentPayment");
 db.studentDisease = require("../models/studentDisease");
 db.registerationDetails = require("../models/registrationdetails");
+
+//relations
 db.addresscur.belongsTo(db.admissions);
 db.addressperm.belongsTo(db.admissions);
 db.ddDetails.belongsTo(db.studentPayment);
@@ -26,5 +28,17 @@ db.jeemain.belongsTo(db.admissions);
 db.studentPayment.belongsTo(db.admissions);
 db.studentDisease.belongsTo(db.admissions);
 db.registerationDetails.belongsTo(db.admissions);
+
+//main
+
+db.admissions.hasOne(db.addresscur);
+db.admissions.hasOne(db.addressperm);
+db.admissions.hasOne(db.hscdetail);
+db.admissions.hasOne(db.sscDetails);
+db.admissions.hasOne(db.jeemain);
+db.admissions.hasOne(db.studentPayment);
+db.admissions.hasOne(db.studentDisease);
+db.admissions.hasOne(db.registerationDetails);
+db.studentPayment.hasMany(db.ddDetails);
 
 module.exports = db;

@@ -72,7 +72,7 @@ const Admissions = () => {
 
           const res = await axios.post(
             "http://localhost:8000/api/admission/new",
-            formdata
+            values
           );
         }}
       >
