@@ -1,6 +1,5 @@
 const router = require("express").Router();
 const db = require("../configs/db").sequelize;
-console.log(db);
 
 router.get("/getAll", async (req, res) => {
   const feedbacks = await db.models.Feedback.findAll();
