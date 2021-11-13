@@ -1,5 +1,5 @@
 import { Formik } from "formik";
-
+import axios from "axios";
 const Admissions = () => {
   return (
     <div className="boddy">
@@ -57,10 +57,22 @@ const Admissions = () => {
           dec: "",
           sign: null,
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={async (values) => {
+          const formdata = new FormData();
+          formdata.append("photo", values.photo);
+          formdata.append("sign", values.sign);
+          const requestOptions = {
+            values,
+          };
+
+          const res = await axios.post(
+            "http://localhost:8000/api/admission/new",
+            formdata
+          );
+        }}
       >
         {({ values, handleChange, handleSubmit, handleBlur }) => (
-          <form onSubmit={handleSubmit}>
+          <form onSubmit={handleSubmit} enctype="multipart/form-data">
             <div className="hdiv">
               <div className="headingg">
                 <h2>

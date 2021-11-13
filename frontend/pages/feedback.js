@@ -1,6 +1,12 @@
 ﻿import { Formik } from "formik";
+import axios from "axios";
 
 const Feedback = () => {
+  const SubmitHandler = async (feedback) => {
+    const res = await fetch.post("localhost:4000/api/feedback/new", {
+      body: feedback,
+    });
+  };
   return (
     <div className="boddy">
       <h2>Student's Feedback Form</h2>
@@ -24,7 +30,17 @@ const Feedback = () => {
           t4: "",
           t5: "",
         }}
-        onSubmit={(values) => console.log(values)}
+        onSubmit={async (values) => {
+          const requestOptions = {
+            headers: { "Content-Type": "application/json" },
+            body: values,
+          };
+          console.log(values);
+          const res = axios.post(
+            "http://localhost:8000/api/feedback/new",
+            requestOptions
+          );
+        }}
       >
         {({ values, handleChange, handleSubmit, handleBlur }) => (
           <form onSubmit={handleSubmit}>
@@ -84,11 +100,8 @@ const Feedback = () => {
                       onBlur={handleBlur}
                     >
                       <option value="" label="Select any One" />
-                      <option value="Excellent" label="Excellent" />
-                      <option value="Very Good" label="Very Good" />
-                      <option value="Good" label="Good" />
-                      <option value="Average" label="Average" />
-                      <option value="Below Average" label="Below Average" />
+                      <option value="1" label="Yes" />
+                      <option value="0" label="No" />
                     </select>
                   </td>
                 </tr>
@@ -107,14 +120,11 @@ const Feedback = () => {
                             onBlur={handleBlur}
                           >
                             <option value="" label="Select any One" />
-                            <option value="Excellent" label="Excellent" />
-                            <option value="Very Good" label="Very Good" />
-                            <option value="Good" label="Good" />
-                            <option value="Average" label="Average" />
-                            <option
-                              value="Below Average"
-                              label="Below Average"
-                            />
+                            <option value="5" label="Excellent" />
+                            <option value="4" label="Very Good" />
+                            <option value="3" label="Good" />
+                            <option value="2" label="Average" />
+                            <option value="1" label="Below Average" />
                           </select>
                         </td>
                       </tr>
@@ -128,14 +138,11 @@ const Feedback = () => {
                             onBlur={handleBlur}
                           >
                             <option value="" label="Select any One" />
-                            <option value="Excellent" label="Excellent" />
-                            <option value="Very Good" label="Very Good" />
-                            <option value="Good" label="Good" />
-                            <option value="Average" label="Average" />
-                            <option
-                              value="Below Average"
-                              label="Below Average"
-                            />
+                            <option value="5" label="Excellent" />
+                            <option value="4" label="Very Good" />
+                            <option value="3" label="Good" />
+                            <option value="2" label="Average" />
+                            <option value="1" label="Below Average" />
                           </select>
                         </td>
                       </tr>
@@ -152,14 +159,11 @@ const Feedback = () => {
                             onBlur={handleBlur}
                           >
                             <option value="" label="Select any One" />
-                            <option value="Excellent" label="Excellent" />
-                            <option value="Very Good" label="Very Good" />
-                            <option value="Good" label="Good" />
-                            <option value="Average" label="Average" />
-                            <option
-                              value="Below Average"
-                              label="Below Average"
-                            />
+                            <option value="5" label="Excellent" />
+                            <option value="4" label="Very Good" />
+                            <option value="3" label="Good" />
+                            <option value="2" label="Average" />
+                            <option value="1" label="Below Average" />
                           </select>
                         </td>
                       </tr>
@@ -173,14 +177,11 @@ const Feedback = () => {
                             onBlur={handleBlur}
                           >
                             <option value="" label="Select any One" />
-                            <option value="Excellent" label="Excellent" />
-                            <option value="Very Good" label="Very Good" />
-                            <option value="Good" label="Good" />
-                            <option value="Average" label="Average" />
-                            <option
-                              value="Below Average"
-                              label="Below Average"
-                            />
+                            <option value="5" label="Excellent" />
+                            <option value="4" label="Very Good" />
+                            <option value="3" label="Good" />
+                            <option value="2" label="Average" />
+                            <option value="1" label="Below Average" />
                           </select>
                         </td>
                       </tr>
@@ -194,14 +195,11 @@ const Feedback = () => {
                             onBlur={handleBlur}
                           >
                             <option value="" label="Select any One" />
-                            <option value="Excellent" label="Excellent" />
-                            <option value="Very Good" label="Very Good" />
-                            <option value="Good" label="Good" />
-                            <option value="Average" label="Average" />
-                            <option
-                              value="Below Average"
-                              label="Below Average"
-                            />
+                            <option value="5" label="Excellent" />
+                            <option value="4" label="Very Good" />
+                            <option value="3" label="Good" />
+                            <option value="2" label="Average" />
+                            <option value="1" label="Below Average" />
                           </select>
                         </td>
                       </tr>
@@ -219,11 +217,11 @@ const Feedback = () => {
                       onBlur={handleBlur}
                     >
                       <option value="" label="Select any One" />
-                      <option value="Excellent" label="Excellent" />
-                      <option value="Very Good" label="Very Good" />
-                      <option value="Good" label="Good" />
-                      <option value="Average" label="Average" />
-                      <option value="Below Average" label="Below Average" />
+                      <option value="5" label="Excellent" />
+                      <option value="4" label="Very Good" />
+                      <option value="3" label="Good" />
+                      <option value="2" label="Average" />
+                      <option value="1" label="Below Average" />
                     </select>
                   </td>
                 </tr>
@@ -238,11 +236,11 @@ const Feedback = () => {
                       onBlur={handleBlur}
                     >
                       <option value="" label="Select any One" />
-                      <option value="Excellent" label="Excellent" />
-                      <option value="Very Good" label="Very Good" />
-                      <option value="Good" label="Good" />
-                      <option value="Average" label="Average" />
-                      <option value="Below Average" label="Below Average" />
+                      <option value="5" label="Excellent" />
+                      <option value="4" label="Very Good" />
+                      <option value="3" label="Good" />
+                      <option value="2" label="Average" />
+                      <option value="1" label="Below Average" />
                     </select>
                   </td>
                 </tr>

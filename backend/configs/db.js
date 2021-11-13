@@ -1,17 +1,12 @@
 const Sequelize = require("sequelize");
+const sequelize = require("./sequelize");
+const db = {};
 
+db.Sequelize = Sequelize;
+db.sequelize = sequelize;
 
-const sequelize = new Sequelize("dbmsproject", "root", "password", {
-	dialect: "mysql",
-	host: "localhost",
+//models
+db.feedBack = require("../models/studentFeedback");
+db.admissions = require("../models/admission");
 
-})
-
-const db = {}
-
-db.Sequelize = Sequelize
-db.sequelize = sequelize
-
-
-
-module.exports = db
+module.exports = db;
