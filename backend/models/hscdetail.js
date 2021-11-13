@@ -2,7 +2,6 @@ const { DataTypes } = require("sequelize");
 const sequelize = require("../configs/sequelize");
 
 const HSCdetail = sequelize.define("HSCDetail", {
-  JEER: { type: DataTypes.STRING },
   hscb: { type: DataTypes.STRING },
   hscs: { type: DataTypes.STRING },
   hscy: { type: DataTypes.INTEGER },

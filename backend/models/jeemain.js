@@ -8,7 +8,6 @@ const jeeMain = sequelize.define("jeeMainDetails", {
     defaultValue: DataTypes.UUIDV4,
   },
   JEEAR: { type: DataTypes.INTEGER },
-  JEER: { type: DataTypes.STRING },
   JEESA: { type: DataTypes.INTEGER },
   JEESM: { type: DataTypes.INTEGER },
   JEESS: { type: DataTypes.INTEGER },
