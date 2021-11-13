@@ -1,10 +1,21 @@
-.boddy {
-  width: 80%;
-  margin: 10px auto;
+body {
+  background-color: #f4f7ff;
 }
 
-.boddy > div {
+.boddy {
+  width: 70%;
+  margin: 50px auto;
+}
+
+form > div {
   margin: 10px;
+  padding: 20px 10px;
+  background-color: white;
+  border-radius: 30px;
+}
+.titlee {
+  text-align: center;
+  color: purple;
 }
 .hdiv {
   display: flex;
@@ -17,7 +28,72 @@
 }
 
 .photo {
-  min-height: 80%;
-  margin: 5px auto;
+  height: 40px;
+  padding: 10px;
   border: 1px solid black;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+.subgrid {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px 50px;
+}
+
+.feedbacktable {
+  width: 80%;
+  margin: 10px auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+
+.innerTable {
+  width: 100%;
+  border-collapse: collapse;
+  padding: 0%;
+  text-align: center;
+}
+.btn-wrapper {
+  background-color: transparent;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.submit-btn {
+  margin: 10px auto;
+  width: 90px;
+  height: 30px;
+  font-size: large;
+}
+
+.aaw {
+  width: 50%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.feetable {
+  width: 90%;
+  margin: 10px auto;
+  border-collapse: collapse;
+  text-align: center;
+}
+.feetable * {
+  padding: 4px 3px;
+}
+
+.signdiv {
+  width: fit-content;
+  height: 50px;
+  border: 1px solid black;
+  text-align: center;
+}
+.signdiv > input {
+  padding: 0 10px;
+  margin: 15px auto;
 }
