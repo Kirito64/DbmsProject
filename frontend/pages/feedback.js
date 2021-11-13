@@ -3,7 +3,7 @@
 const Feedback = () => {
   return (
     <div className="boddy">
-      <h2>Student's Feedback Form</h2>
+      <h1 className="titlee">Student's Feedback Form</h1>
 
       <Formik
         initialValues={{
@@ -31,38 +31,65 @@ const Feedback = () => {
             <div className="grid">
               <div className="subgrid">
                 <label>Academic Year</label>
-                <input onChange={handleChange} name="AcYr" type="text" />
+                <input
+                  required
+                  onChange={handleChange}
+                  name="AcYr"
+                  type="text"
+                />
               </div>
               <div className="subgrid">
                 <label>Branch</label>
-                <input onChange={handleChange} name="branch" type="text" />
+                <input
+                  required
+                  onChange={handleChange}
+                  name="branch"
+                  type="text"
+                />
               </div>
               <div className="subgrid">
                 <label>Date of Feedback</label>
-                <input onChange={handleChange} name="Dof" type="text" />
+                <input
+                  required
+                  onChange={handleChange}
+                  name="Dof"
+                  type="date"
+                />
               </div>
               <div className="subgrid">
                 <label>Semester</label>
-                <input type="text" onChange={handleChange} name="Sem" />
+                <input
+                  required
+                  type="text"
+                  onChange={handleChange}
+                  name="Sem"
+                />
               </div>
               <div className="subgrid">
                 <label>Section</label>
-                <input type="text" onChange={handleChange} name="Section" />
+                <input
+                  required
+                  type="text"
+                  onChange={handleChange}
+                  name="Section"
+                />
               </div>
             </div>
             <div>
-              <table border="1px">
+              <table border="1px" className="feedbacktable">
                 <tr>
                   <th></th>
-                  <th>Description</th>
+                  <th style={{ textAlign: "center" }}>Description</th>
                   <th>
                     <input
+                      required
                       type="text"
                       placeholder="Subject"
                       onChange={handleChange}
                       name="Sub"
                     />
                     <input
+                      required
                       type="text"
                       placeholder="Subject Code"
                       onChange={handleChange}
@@ -71,14 +98,15 @@ const Feedback = () => {
                   </th>
                 </tr>
                 <tr>
-                  <td width="10%">1</td>
+                  <td width="5%">1</td>
 
-                  <td>
+                  <td style={{ textAlign: "start", fontWeight: "normal" }}>
                     Has the Teacher covered entire Syllabus as prescribed by
                     University?
                   </td>
-                  <td width="200px">
+                  <td width="250px">
                     <select
+                      required
                       name="t1"
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -94,14 +122,26 @@ const Feedback = () => {
                 </tr>
                 <tr>
                   <td>2</td>
-                  <th colspan="3">
+                  <th
+                    colSpan="3"
+                    style={{
+                      textAlign: "start",
+                      fontWeight: "normal",
+                      padding: "10px 4px",
+                    }}
+                  >
                     Effectiveness of Teacher in terms of
-                    <table width="100%" border="1px">
+                    <table className="innerTable" border="1px">
                       <tr>
                         <td width="10%">2.1</td>
-                        <td>Technical content</td>
-                        <td width="200px">
+                        <td
+                          style={{ textAlign: "start", fontWeight: "normal" }}
+                        >
+                          Technical content
+                        </td>
+                        <td>
                           <select
+                            required
                             name="t21"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -120,9 +160,14 @@ const Feedback = () => {
                       </tr>
                       <tr>
                         <td width="10%">2.2</td>
-                        <td>Communication skills</td>
-                        <td width="200px">
+                        <td
+                          style={{ textAlign: "start", fontWeight: "normal" }}
+                        >
+                          Communication skills
+                        </td>
+                        <td width="250px">
                           <select
+                            required
                             name="t22"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -141,12 +186,15 @@ const Feedback = () => {
                       </tr>
                       <tr>
                         <td width="10%">2.3</td>
-                        <td>
+                        <td
+                          style={{ textAlign: "start", fontWeight: "normal" }}
+                        >
                           Availability beyond normal classes and co-operation to
                           solve individual problems
                         </td>
-                        <td width="200px">
+                        <td>
                           <select
+                            required
                             name="t23"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -165,9 +213,14 @@ const Feedback = () => {
                       </tr>
                       <tr>
                         <td width="10%">2.4</td>
-                        <td>Pace on which contents were covered</td>
-                        <td width="200px">
+                        <td
+                          style={{ textAlign: "start", fontWeight: "normal" }}
+                        >
+                          Pace on which contents were covered
+                        </td>
+                        <td>
                           <select
+                            required
                             name="t24"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -186,9 +239,14 @@ const Feedback = () => {
                       </tr>
                       <tr>
                         <td width="10%">2.5</td>
-                        <td>Overall effectiveness</td>
-                        <td width="200px">
+                        <td
+                          style={{ textAlign: "start", fontWeight: "normal" }}
+                        >
+                          Overall effectiveness
+                        </td>
+                        <td>
                           <select
+                            required
                             name="t25"
                             onChange={handleChange}
                             onBlur={handleBlur}
@@ -211,9 +269,12 @@ const Feedback = () => {
                 <tr>
                   <td>3</td>
 
-                  <td>How do you rate the contents of the curricular ?</td>
+                  <td style={{ textAlign: "start", fontWeight: "normal" }}>
+                    How do you rate the contents of the curricular ?
+                  </td>
                   <td>
                     <select
+                      required
                       name="t3"
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -230,9 +291,12 @@ const Feedback = () => {
                 <tr>
                   <td>4</td>
 
-                  <td>How do you rate lab experiments, if applicable?</td>
+                  <td style={{ textAlign: "start", fontWeight: "normal" }}>
+                    How do you rate lab experiments, if applicable?
+                  </td>
                   <td width="200px">
                     <select
+                      required
                       name="t4"
                       onChange={handleChange}
                       onBlur={handleBlur}
@@ -249,14 +313,27 @@ const Feedback = () => {
                 <tr>
                   <td>5</td>
 
-                  <td>Any Remarks</td>
-                  <td width="200px">
-                    <input type="text" name="t5" onChange={handleChange} />
+                  <td style={{ textAlign: "start", fontWeight: "normal" }}>
+                    Any Remarks
+                  </td>
+                  <td>
+                    <textarea
+                      required
+                      onChange={handleChange}
+                      name="t5"
+                      cols="30"
+                      rows="3"
+                      style={{ resize: "none" }}
+                    ></textarea>
                   </td>
                 </tr>
               </table>
             </div>
-            <button type="submit">Submit</button>
+            <div className="btn-wrapper">
+              <button type="submit" className="submit-btn">
+                Submit
+              </button>
+            </div>
           </form>
         )}
       </Formik>
